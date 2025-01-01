@@ -1,8 +1,10 @@
 class BankAccount {
-  BankAccount(double balance) {
-    this.balance = balance;
-  }
-  double balance = 0;
+  BankAccount({
+    required this.accountHolder,
+    this.balance = 0,
+  });
+  final String accountHolder;
+  double balance;
 
   void deposit(double amount) {
     balance += amount;
@@ -19,7 +21,7 @@ class BankAccount {
 }
 
 void main() {
-  final bankAccount = BankAccount(100);
+  final bankAccount = BankAccount(accountHolder: 'Jeff', balance: 100);
   print(bankAccount);
   bankAccount.deposit(100);
   bankAccount.deposit(50);
